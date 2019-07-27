@@ -12,7 +12,14 @@ def pscan(port):
     except:
         return False
 
-for x in range(440,451):
+
+print("--Welcome to Jacob's port scanner!--")
+print('Please enter the first port in the range you would like to scan')
+firstPort = input()
+print('Please enter the last port in the range you would like to scan')
+lastPort = input()
+
+for x in range(int(firstPort),int(lastPort)):
     if pscan(x):
         print('Port',x, 'is Open')
     else:
