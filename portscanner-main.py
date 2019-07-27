@@ -1,5 +1,5 @@
 import socket
-
+from portCheck import portInfo
 #s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server = '192.168.1.160'
 
@@ -21,6 +21,6 @@ lastPort = input()
 
 for x in range(int(firstPort),int(lastPort)):
     if pscan(x):
-        print('Port',x, 'is Open')
+        print('Port',x, 'is Open', portInfo(x))
     else:
-        print('Port',x, 'is Closed')
+        print('Port',x, 'is Closed', portInfo(x))
